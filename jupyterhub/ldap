@@ -1,0 +1,12 @@
+service ldap
+{
+        socket_type     = stream
+        protocol        = tcp
+        wait            = no
+        user            = root
+        disable         = no
+        server          = /usr/bin/ssh
+        server_args     = -q -T -y -i /root/ldap.key jphillipstest@ranger0.cs.mtsu.edu /nfshome/jphillipstest/nc 161.45.163.3 389
+        groups          = yes
+        bind            = 127.0.0.1
+}
